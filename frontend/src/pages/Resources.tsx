@@ -29,6 +29,12 @@ export default function Resources() {
     const [bookingSuccess, setBookingSuccess] = useState(false);
     const [bookingError, setBookingError] = useState('');
     const [userRole, setUserRole] = useState('USER');
+    
+    const getLocalDateString = () => {
+        const d = new Date();
+        return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+    };
+    const [heatmapDate, setHeatmapDate] = useState(getLocalDateString());
 
     // Resource Management Modal State (Handles both Add & Edit)
     const [isManageModalOpen, setIsManageModalOpen] = useState(false);
@@ -74,7 +80,7 @@ export default function Resources() {
 
     const fetchAllBookings = async () => {
         try {
-            const response = await api.get('/bookings?status=APPROVED');
+            const response = await api.get('/bookings');
             setAllBookings(response.data || []);
         } catch (error) {
             console.error("Failed to fetch bookings for heatmap", error);
@@ -166,6 +172,7 @@ export default function Resources() {
             setEndTime('');
             setPurpose('');
             setExpectedAttendees('');
+            fetchAllBookings();
 
         } catch (error: any) {
             console.error("Failed to submit booking", error);
@@ -211,6 +218,18 @@ export default function Resources() {
             alert("Failed to save resource. Check your inputs.");
         } finally {
             setAddLoading(false);
+        }
+    };
+
+    const handleDeleteResource = async (resourceId: string) => {
+        if (!confirm('Are you sure you want to delete this resource? This action cannot be undone.')) return;
+
+        try {
+            await api.delete(`/resources/${resourceId}`);
+            setResources(prev => prev.filter(r => r.id !== resourceId));
+        } catch (error) {
+            console.error('Failed to delete resource', error);
+            alert('Delete failed. Resource may be linked to existing bookings or you may not have permission.');
         }
     };
 
@@ -268,8 +287,19 @@ export default function Resources() {
             <div className="bg-[#181a20] p-6 rounded-2xl border border-[#262832] mb-6 shadow-sm">
                 <div className="flex justify-between items-center mb-6">
                     <h3 className="text-sm font-bold text-slate-200 tracking-wide">Hourly Occupancy Heatmap</h3>
-                    <div className="flex items-center space-x-2">
-                        <span className="bg-yellow-500/10 border border-yellow-500/20 text-yellow-500 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">Today</span>
+                    <div className="flex items-center space-x-3">
+                        <div className="relative group flex items-center">
+                            <Calendar className="w-3.5 h-3.5 text-slate-500 mr-2" />
+                            <input 
+                                type="date" 
+                                value={heatmapDate}
+                                onChange={(e) => setHeatmapDate(e.target.value)}
+                                className="bg-[#12141a] border border-[#262832] text-slate-300 text-[10px] font-bold rounded-lg px-3 py-1.5 focus:outline-none focus:ring-1 focus:ring-blue-500/50 hover:bg-[#1c1e26] transition-all cursor-pointer [color-scheme:dark]"
+                            />
+                        </div>
+                        <span className={`px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider ${heatmapDate === getLocalDateString() ? 'bg-yellow-500/10 border border-yellow-500/20 text-yellow-500' : 'bg-blue-500/10 border border-blue-500/20 text-blue-400'}`}>
+                            {heatmapDate === getLocalDateString() ? 'Today' : 'Future'}
+                        </span>
                     </div>
                 </div>
                 <div className="flex text-[10px] font-bold text-slate-600 uppercase tracking-wider pl-[4.5rem] border-b border-[#262832] pb-2 mb-3">
@@ -280,10 +310,11 @@ export default function Resources() {
                         <div className="w-[4.5rem] text-[10px] font-bold text-slate-500 pr-4 text-right group-hover:text-slate-300 transition-colors truncate" title={res.name}>{res.name}</div>
                         <div className="flex-1 flex space-x-1 h-full">
                             {[8, 9, 10, 11, 12, 13, 14, 15].map(hour => {
-                                // Check if this resource is booked today at this hour
-                                const today = new Date().toISOString().split('T')[0];
+                                // Check if this resource is booked on the selected date at this hour
+                                const selectedDate = heatmapDate;
                                 
                                 const isOccupied = allBookings.some(b => {
+                                    if (b.status !== 'APPROVED' && b.status !== 'CHECKED_IN' && b.status !== 'PENDING') return false;
                                     // Match resource
                                     const matchRes = (b.resourceId === res.id || b.resource?.id === res.id);
                                     if (!matchRes) return false;
@@ -292,17 +323,34 @@ export default function Resources() {
                                     let bDate = '';
                                     if (Array.isArray(b.date)) bDate = `${b.date[0]}-${String(b.date[1]).padStart(2, '0')}-${String(b.date[2]).padStart(2, '0')}`;
                                     else if (typeof b.date === 'string') bDate = b.date.split('T')[0];
-                                    if (bDate !== today) return false;
+                                    if (bDate !== selectedDate) return false;
 
                                     // Match hour
-                                    let startH = 0, endH = 0;
-                                    if (Array.isArray(b.startTime)) startH = b.startTime[0];
-                                    else if (typeof b.startTime === 'string') startH = parseInt(b.startTime.split(':')[0]);
+                                    let startH = 0, startM = 0, endH = 0, endM = 0;
+                                    if (Array.isArray(b.startTime)) {
+                                        startH = b.startTime[0];
+                                        startM = b.startTime.length > 1 ? b.startTime[1] : 0;
+                                    } else if (typeof b.startTime === 'string') {
+                                        const parts = b.startTime.split(':');
+                                        startH = parseInt(parts[0]);
+                                        startM = parseInt(parts[1] || '0');
+                                    }
                                     
-                                    if (Array.isArray(b.endTime)) endH = b.endTime[0];
-                                    else if (typeof b.endTime === 'string') endH = parseInt(b.endTime.split(':')[0]);
+                                    if (Array.isArray(b.endTime)) {
+                                        endH = b.endTime[0];
+                                        endM = b.endTime.length > 1 ? b.endTime[1] : 0;
+                                    } else if (typeof b.endTime === 'string') {
+                                        const parts = b.endTime.split(':');
+                                        endH = parseInt(parts[0]);
+                                        endM = parseInt(parts[1] || '0');
+                                    }
 
-                                    return hour >= startH && hour < endH;
+                                    const blockStart = hour * 60;
+                                    const blockEnd = (hour + 1) * 60;
+                                    const bookingStart = startH * 60 + startM;
+                                    const bookingEnd = endH * 60 + endM;
+
+                                    return bookingStart < blockEnd && bookingEnd > blockStart;
                                 });
 
                                 return (
@@ -445,12 +493,14 @@ export default function Resources() {
                                             Edit
                                         </button>
                                     )}
-                                    <Link 
-                                        to={`/tickets?resourceId=${res.id}`}
-                                        className="px-3 py-1.5 rounded-lg text-[10px] font-bold tracking-wider uppercase text-emerald-400 bg-emerald-500/10 hover:bg-emerald-500/20 transition-colors"
-                                    >
-                                        Report
-                                    </Link>
+                                    {userRole === 'ADMIN' && (
+                                        <button
+                                            onClick={() => handleDeleteResource(res.id)}
+                                            className="px-3 py-1.5 rounded-lg text-[10px] font-bold tracking-wider uppercase text-red-400 bg-red-500/10 hover:bg-red-500/20 transition-colors"
+                                        >
+                                            Delete
+                                        </button>
+                                    )}
                                     {userRole !== 'ADMIN' && (
                                         <button
                                             onClick={() => handleBookNow(res)}
@@ -627,10 +677,11 @@ export default function Resources() {
                                                 }
                                                 setBookingError("");
                                                 try {
-                                                    const res = await api.get('/bookings?status=APPROVED');
+                                                    const res = await api.get('/bookings');
                                                     const conflicts = res.data.filter((b: any) => 
                                                         b.resourceId === selectedResource.id && 
                                                         b.date === bookingDate && 
+                                                        (b.status === 'APPROVED' || b.status === 'CHECKED_IN') &&
                                                         ((startTime >= b.startTime && startTime < b.endTime) ||
                                                          (endTime > b.startTime && endTime <= b.endTime) ||
                                                          (startTime <= b.startTime && endTime >= b.endTime))
