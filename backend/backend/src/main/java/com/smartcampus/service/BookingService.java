@@ -45,6 +45,17 @@ public class BookingService {
             throw new BusinessException("Start time must be before end time");
         }
 
+        // Strict Conflict Check: Prevent creating a PENDING request if the slot is already taken
+        List<Booking> conflicts = bookingRepository.findConflictingBookings(
+                resource.getId(),
+                request.getDate(),
+                request.getStartTime(),
+                request.getEndTime(),
+                null);
+        if (!conflicts.isEmpty()) {
+            throw new ConflictException("This time slot is already booked for this resource.");
+        }
+
         User user = userRepository.findById(userId)
                 .orElseThrow(() -> new ResourceNotFoundException("User", userId));
 

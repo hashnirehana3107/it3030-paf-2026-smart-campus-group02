@@ -1,4 +1,4 @@
-import { Outlet, Link, useLocation } from 'react-router-dom';
+import { Outlet, Link, useLocation, useNavigate } from 'react-router-dom';
 import { Home, Calendar as CalendarIcon, LayoutDashboard, Wrench, Bell, LogOut, Database, User, Search, Settings, X } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { formatDistanceToNow, parseISO } from 'date-fns';
@@ -7,6 +7,7 @@ import AIAssistant from './AIAssistant';
 
 export default function Layout() {
     const location = useLocation();
+    const navigate = useNavigate();
     const [showNotifications, setShowNotifications] = useState(false);
     const [isDarkMode, setIsDarkMode] = useState(true);
 
@@ -326,6 +327,12 @@ export default function Layout() {
                                                     key={n.id}
                                                     onClick={(e) => {
                                                         if (!n.read) markAsRead(n.id, e);
+                                                        if (n.type?.startsWith('BOOKING')) {
+                                                            navigate('/bookings');
+                                                        } else if (n.type?.startsWith('TICKET')) {
+                                                            navigate('/tickets');
+                                                        }
+                                                        setShowNotifications(false);
                                                     }}
                                                     className={`p-4 border-b border-[#2b2d38]/40 hover:bg-[#242631] transition-all cursor-pointer relative group ${!n.read ? 'bg-blue-500/[0.03]' : ''}`}
                                                 >

@@ -1,0 +1,411 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1400" viewBox="0 0 1800 1400">
+  <!-- Background -->
+  <rect width="1800" height="1400" fill="#f8f9fa"/>
+  
+  <!-- Title -->
+  <text x="900" y="30" text-anchor="middle" font-size="24" font-weight="bold" fill="#2c3e50">StreetToSweet Dog Shelter Management System - Workflow Diagram</text>
+  
+  <!-- Define arrow markers -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#333"/>
+    </marker>
+  </defs>
+
+  <!-- PUBLIC USER FLOW - Top Section -->
+  <!-- Start Node -->
+  <ellipse cx="100" cy="80" rx="70" ry="40" fill="#ff6b6b" stroke="#333" stroke-width="2"/>
+  <text x="100" y="80" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Public User</text>
+  <text x="100" y="95" text-anchor="middle" fill="white" font-size="11">Registration</text>
+
+  <!-- Sign In -->
+  <rect x="40" y="150" width="120" height="50" rx="5" fill="#74b9ff" stroke="#333" stroke-width="2"/>
+  <text x="100" y="180" text-anchor="middle" font-size="12" font-weight="bold">Sign In To The</text>
+  <text x="100" y="195" text-anchor="middle" font-size="12" font-weight="bold">System</text>
+
+  <!-- Login Validation Diamond -->
+  <polygon points="100,230 160,270 100,310 40,270" fill="#ffd93d" stroke="#333" stroke-width="2"/>
+  <text x="100" y="268" text-anchor="middle" font-size="11" font-weight="bold">Validate User</text>
+  <text x="100" y="280" text-anchor="middle" font-size="11" font-weight="bold">Login Credential</text>
+
+  <!-- Create Profile -->
+  <rect x="220" y="245" width="120" height="50" rx="5" fill="#74b9ff" stroke="#333" stroke-width="2"/>
+  <text x="280" y="270" text-anchor="middle" font-size="11" font-weight="bold">Create User Profile</text>
+
+  <!-- Report Stray Dog -->
+  <rect x="380" y="245" width="120" height="50" rx="5" fill="#74b9ff" stroke="#333" stroke-width="2"/>
+  <text x="440" y="263" text-anchor="middle" font-size="10" font-weight="bold">Report Stray/Injured/</text>
+  <text x="440" y="276" text-anchor="middle" font-size="10" font-weight="bold">Lost Dog with</text>
+  <text x="440" y="289" text-anchor="middle" font-size="10" font-weight="bold">Photo &amp; GPS Location</text>
+
+  <!-- Browse Adoptable Dogs -->
+  <rect x="540" y="245" width="120" height="50" rx="5" fill="#a29bfe" stroke="#333" stroke-width="2"/>
+  <text x="600" y="265" text-anchor="middle" font-size="10" font-weight="bold">Browse Adoptable</text>
+  <text x="600" y="278" text-anchor="middle" font-size="10" font-weight="bold">Dogs</text>
+
+  <!-- Submit Adoption Request -->
+  <rect x="700" y="245" width="120" height="50" rx="5" fill="#a29bfe" stroke="#333" stroke-width="2"/>
+  <text x="760" y="265" text-anchor="middle" font-size="10" font-weight="bold">Submit Adoption</text>
+  <text x="760" y="278" text-anchor="middle" font-size="10" font-weight="bold">Request</text>
+
+  <!-- Receive Certificate -->
+  <rect x="860" y="245" width="120" height="50" rx="5" fill="#a29bfe" stroke="#333" stroke-width="2"/>
+  <text x="920" y="265" text-anchor="middle" font-size="10" font-weight="bold">Receive Adoption</text>
+  <text x="920" y="278" text-anchor="middle" font-size="10" font-weight="bold">Certificate</text>
+
+  <!-- Post Lost/Found Notice -->
+  <rect x="220" y="330" width="120" height="50" rx="5" fill="#74b9ff" stroke="#333" stroke-width="2"/>
+  <text x="280" y="350" text-anchor="middle" font-size="10" font-weight="bold">Post Lost/Found</text>
+  <text x="280" y="363" text-anchor="middle" font-size="10" font-weight="bold">Dog Notice</text>
+
+  <!-- Donate -->
+  <rect x="380" y="330" width="120" height="50" rx="5" fill="#74b9ff" stroke="#333" stroke-width="2"/>
+  <text x="440" y="350" text-anchor="middle" font-size="10" font-weight="bold">Donate Funds/</text>
+  <text x="440" y="363" text-anchor="middle" font-size="10" font-weight="bold">Supplies</text>
+
+  <!-- Register as Volunteer -->
+  <rect x="540" y="330" width="120" height="50" rx="5" fill="#74b9ff" stroke="#333" stroke-width="2"/>
+  <text x="600" y="350" text-anchor="middle" font-size="10" font-weight="bold">Register as</text>
+  <text x="600" y="363" text-anchor="middle" font-size="10" font-weight="bold">Volunteer</text>
+
+  <!-- ADMIN FLOW - Middle Section -->
+  <!-- Admin Registration -->
+  <ellipse cx="100" cy="480" rx="70" ry="40" fill="#ff6b6b" stroke="#333" stroke-width="2"/>
+  <text x="100" y="480" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Admin</text>
+  <text x="100" y="495" text-anchor="middle" fill="white" font-size="11">Registration</text>
+
+  <!-- Admin Sign In -->
+  <rect x="40" y="550" width="120" height="50" rx="5" fill="#a8e6cf" stroke="#333" stroke-width="2"/>
+  <text x="100" y="580" text-anchor="middle" font-size="12" font-weight="bold">Admin Sign In</text>
+
+  <!-- Admin Login Validation -->
+  <polygon points="100,630 160,670 100,710 40,670" fill="#ffd93d" stroke="#333" stroke-width="2"/>
+  <text x="100" y="668" text-anchor="middle" font-size="11" font-weight="bold">Validate Admin</text>
+  <text x="100" y="680" text-anchor="middle" font-size="11" font-weight="bold">Credentials</text>
+
+  <!-- Verify Reports -->
+  <rect x="220" y="645" width="120" height="50" rx="5" fill="#ffb3ba" stroke="#333" stroke-width="2"/>
+  <text x="280" y="665" text-anchor="middle" font-size="10" font-weight="bold">Verify Dog</text>
+  <text x="280" y="678" text-anchor="middle" font-size="10" font-weight="bold">Reports</text>
+
+  <!-- Assign Rescue Driver -->
+  <rect x="380" y="645" width="120" height="50" rx="5" fill="#ffb3ba" stroke="#333" stroke-width="2"/>
+  <text x="440" y="665" text-anchor="middle" font-size="10" font-weight="bold">Assign Rescue</text>
+  <text x="440" y="678" text-anchor="middle" font-size="10" font-weight="bold">Driver</text>
+
+  <!-- Register Dog -->
+  <rect x="540" y="645" width="120" height="50" rx="5" fill="#ffb3ba" stroke="#333" stroke-width="2"/>
+  <text x="600" y="660" text-anchor="middle" font-size="10" font-weight="bold">Register Dog</text>
+  <text x="600" y="673" text-anchor="middle" font-size="10" font-weight="bold">(ID, Color Tag,</text>
+  <text x="600" y="686" text-anchor="middle" font-size="10" font-weight="bold">Profile)</text>
+
+  <!-- Approve Adoption -->
+  <rect x="700" y="645" width="120" height="50" rx="5" fill="#ffb3ba" stroke="#333" stroke-width="2"/>
+  <text x="760" y="665" text-anchor="middle" font-size="10" font-weight="bold">Review &amp; Approve</text>
+  <text x="760" y="678" text-anchor="middle" font-size="10" font-weight="bold">Adoption Requests</text>
+
+  <!-- Manage Users -->
+  <rect x="220" y="730" width="120" height="50" rx="5" fill="#a8e6cf" stroke="#333" stroke-width="2"/>
+  <text x="280" y="755" text-anchor="middle" font-size="10" font-weight="bold">Manage User</text>
+  <text x="280" y="768" text-anchor="middle" font-size="10" font-weight="bold">Accounts</text>
+
+  <!-- Organize Events -->
+  <rect x="380" y="730" width="120" height="50" rx="5" fill="#ffb3ba" stroke="#333" stroke-width="2"/>
+  <text x="440" y="745" text-anchor="middle" font-size="10" font-weight="bold">Organize Events</text>
+  <text x="440" y="758" text-anchor="middle" font-size="10" font-weight="bold">(Campaigns, Drives,</text>
+  <text x="440" y="771" text-anchor="middle" font-size="10" font-weight="bold">Adoption Events)</text>
+
+  <!-- Monitor Activities -->
+  <rect x="540" y="730" width="120" height="50" rx="5" fill="#ffb3ba" stroke="#333" stroke-width="2"/>
+  <text x="600" y="750" text-anchor="middle" font-size="10" font-weight="bold">Monitor Shelter</text>
+  <text x="600" y="763" text-anchor="middle" font-size="10" font-weight="bold">Activities</text>
+
+  <!-- Generate Reports -->
+  <rect x="700" y="730" width="120" height="50" rx="5" fill="#a8e6cf" stroke="#333" stroke-width="2"/>
+  <text x="760" y="750" text-anchor="middle" font-size="10" font-weight="bold">Generate Final</text>
+  <text x="760" y="763" text-anchor="middle" font-size="10" font-weight="bold">Reports</text>
+
+  <!-- RESCUE DRIVER FLOW - Right Section -->
+  <!-- Rescue Driver Registration -->
+  <ellipse cx="1100" cy="80" rx="70" ry="40" fill="#ff6b6b" stroke="#333" stroke-width="2"/>
+  <text x="1100" y="80" text-anchor="middle" fill="white" font-size="11" font-weight="bold">Rescue Driver</text>
+  <text x="1100" y="95" text-anchor="middle" fill="white" font-size="11">Registration</text>
+
+  <!-- Driver Sign In -->
+  <rect x="1040" y="150" width="120" height="50" rx="5" fill="#ffdfba" stroke="#333" stroke-width="2"/>
+  <text x="1100" y="180" text-anchor="middle" font-size="12" font-weight="bold">Sign In To The</text>
+  <text x="1100" y="195" text-anchor="middle" font-size="12" font-weight="bold">System</text>
+
+  <!-- Driver Login Validation -->
+  <polygon points="1100,230 1160,270 1100,310 1040,270" fill="#ffd93d" stroke="#333" stroke-width="2"/>
+  <text x="1100" y="268" text-anchor="middle" font-size="11" font-weight="bold">Validate Driver</text>
+  <text x="1100" y="280" text-anchor="middle" font-size="11" font-weight="bold">Credentials</text>
+
+  <!-- Receive Assignment -->
+  <rect x="1220" y="245" width="120" height="50" rx="5" fill="#ffdfba" stroke="#333" stroke-width="2"/>
+  <text x="1280" y="265" text-anchor="middle" font-size="10" font-weight="bold">Receive Rescue</text>
+  <text x="1280" y="278" text-anchor="middle" font-size="10" font-weight="bold">Assignment</text>
+
+  <!-- Update Rescue Status -->
+  <rect x="1380" y="245" width="120" height="50" rx="5" fill="#ffdfba" stroke="#333" stroke-width="2"/>
+  <text x="1440" y="258" text-anchor="middle" font-size="10" font-weight="bold">Update Rescue Status</text>
+  <text x="1440" y="271" text-anchor="middle" font-size="9">(Pending/In Progress/</text>
+  <text x="1440" y="283" text-anchor="middle" font-size="9">Completed)</text>
+
+  <!-- Transport Dog -->
+  <rect x="1540" y="245" width="120" height="50" rx="5" fill="#ffdfba" stroke="#333" stroke-width="2"/>
+  <text x="1600" y="265" text-anchor="middle" font-size="10" font-weight="bold">Transport Dog to</text>
+  <text x="1600" y="278" text-anchor="middle" font-size="10" font-weight="bold">Shelter</text>
+
+  <!-- VETERINARIAN FLOW -->
+  <!-- Vet Registration -->
+  <ellipse cx="1100" cy="410" rx="70" ry="40" fill="#ff6b6b" stroke="#333" stroke-width="2"/>
+  <text x="1100" y="410" text-anchor="middle" fill="white" font-size="11" font-weight="bold">Veterinarian</text>
+  <text x="1100" y="425" text-anchor="middle" fill="white" font-size="11">Registration</text>
+
+  <!-- Vet Sign In -->
+  <rect x="1040" y="480" width="120" height="50" rx="5" fill="#bae1ff" stroke="#333" stroke-width="2"/>
+  <text x="1100" y="510" text-anchor="middle" font-size="12" font-weight="bold">Sign In To The</text>
+  <text x="1100" y="525" text-anchor="middle" font-size="12" font-weight="bold">System</text>
+
+  <!-- Vet Login Validation -->
+  <polygon points="1100,560 1160,600 1100,640 1040,600" fill="#ffd93d" stroke="#333" stroke-width="2"/>
+  <text x="1100" y="598" text-anchor="middle" font-size="11" font-weight="bold">Validate Vet</text>
+  <text x="1100" y="610" text-anchor="middle" font-size="11" font-weight="bold">Credentials</text>
+
+  <!-- Medical Assessment -->
+  <rect x="1220" y="575" width="120" height="50" rx="5" fill="#bae1ff" stroke="#333" stroke-width="2"/>
+  <text x="1280" y="595" text-anchor="middle" font-size="10" font-weight="bold">Perform Medical</text>
+  <text x="1280" y="608" text-anchor="middle" font-size="10" font-weight="bold">Assessment</text>
+
+  <!-- Administer Treatment -->
+  <rect x="1380" y="575" width="120" height="50" rx="5" fill="#bae1ff" stroke="#333" stroke-width="2"/>
+  <text x="1440" y="595" text-anchor="middle" font-size="10" font-weight="bold">Administer</text>
+  <text x="1440" y="608" text-anchor="middle" font-size="10" font-weight="bold">Treatment</text>
+
+  <!-- Update Medical Records -->
+  <rect x="1540" y="575" width="120" height="50" rx="5" fill="#bae1ff" stroke="#333" stroke-width="2"/>
+  <text x="1600" y="590" text-anchor="middle" font-size="10" font-weight="bold">Update Medical</text>
+  <text x="1600" y="603" text-anchor="middle" font-size="10" font-weight="bold">Records &amp; Mark</text>
+  <text x="1600" y="616" text-anchor="middle" font-size="10" font-weight="bold">Available</text>
+
+  <!-- SYSTEM PROCESSES - Bottom Section -->
+  <!-- Automated Notifications -->
+  <rect x="860" y="410" width="140" height="60" rx="5" fill="#dfe6e9" stroke="#333" stroke-width="2"/>
+  <text x="930" y="430" text-anchor="middle" font-size="10" font-weight="bold">Send Automated</text>
+  <text x="930" y="443" text-anchor="middle" font-size="10" font-weight="bold">Notifications</text>
+  <text x="930" y="456" text-anchor="middle" font-size="9">(Rescues, Adoptions,</text>
+  <text x="930" y="468" text-anchor="middle" font-size="9">Events, Donations)</text>
+
+  <!-- Update System Data -->
+  <rect x="860" y="500" width="140" height="60" rx="5" fill="#dfe6e9" stroke="#333" stroke-width="2"/>
+  <text x="930" y="525" text-anchor="middle" font-size="10" font-weight="bold">Update System Data</text>
+  <text x="930" y="538" text-anchor="middle" font-size="9">(Capacity, Timestamps,</text>
+  <text x="930" y="550" text-anchor="middle" font-size="9">Dashboard, Histories)</text>
+
+  <!-- Volunteer Management -->
+  <rect x="220" y="830" width="120" height="50" rx="5" fill="#ffb3ba" stroke="#333" stroke-width="2"/>
+  <text x="280" y="850" text-anchor="middle" font-size="10" font-weight="bold">Manage Volunteers</text>
+  <text x="280" y="863" text-anchor="middle" font-size="9">(Assignments, Tasks)</text>
+
+  <!-- Donation Management -->
+  <rect x="380" y="830" width="120" height="50" rx="5" fill="#ffb3ba" stroke="#333" stroke-width="2"/>
+  <text x="440" y="850" text-anchor="middle" font-size="10" font-weight="bold">Track Donations</text>
+  <text x="440" y="863" text-anchor="middle" font-size="9">(Funds &amp; Supplies)</text>
+
+  <!-- Medical Records -->
+  <rect x="540" y="830" width="120" height="50" rx="5" fill="#ffb3ba" stroke="#333" stroke-width="2"/>
+  <text x="600" y="850" text-anchor="middle" font-size="10" font-weight="bold">Maintain Medical</text>
+  <text x="600" y="863" text-anchor="middle" font-size="10" font-weight="bold">Records</text>
+
+  <!-- Event Registration -->
+  <rect x="700" y="830" width="120" height="50" rx="5" fill="#ffb3ba" stroke="#333" stroke-width="2"/>
+  <text x="760" y="845" text-anchor="middle" font-size="10" font-weight="bold">Handle Event</text>
+  <text x="760" y="858" text-anchor="middle" font-size="9">Registration &amp;</text>
+  <text x="760" y="870" text-anchor="middle" font-size="9">Volunteer Assignments</text>
+
+  <!-- End Node -->
+  <ellipse cx="460" cy="980" rx="60" ry="40" fill="#ff4757" stroke="#333" stroke-width="2"/>
+  <text x="460" y="985" text-anchor="middle" fill="white" font-size="14" font-weight="bold">End</text>
+
+  <!-- ARROWS - Public User Flow -->
+  <line x1="100" y1="120" x2="100" y2="150" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="100" y1="200" x2="100" y2="230" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="160" y1="270" x2="220" y2="270" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="180" y="265" font-size="10" fill="#333">Yes</text>
+  <line x1="340" y1="270" x2="380" y2="270" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="500" y1="270" x2="540" y2="270" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="660" y1="270" x2="700" y2="270" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="820" y1="270" x2="860" y2="270" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Public user to lower options -->
+  <line x1="280" y1="295" x2="280" y2="330" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="440" y1="295" x2="440" y2="330" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="600" y1="295" x2="600" y2="330" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Login fail loop -->
+  <path d="M 40,270 L 20,270 L 20,175 L 40,175" stroke="#333" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <text x="10" y="230" font-size="10" fill="#333">No</text>
+
+  <!-- ARROWS - Admin Flow -->
+  <line x1="100" y1="520" x2="100" y2="550" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="100" y1="600" x2="100" y2="630" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="160" y1="670" x2="220" y2="670" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="180" y="665" font-size="10" fill="#333">Yes</text>
+  <line x1="340" y1="670" x2="380" y2="670" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="500" y1="670" x2="540" y2="670" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="660" y1="670" x2="700" y2="670" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Admin to lower options -->
+  <line x1="280" y1="695" x2="280" y2="730" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="440" y1="695" x2="440" y2="730" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="600" y1="695" x2="600" y2="730" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="760" y1="695" x2="760" y2="730" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Admin login fail loop -->
+  <path d="M 40,670 L 20,670 L 20,575 L 40,575" stroke="#333" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <text x="10" y="630" font-size="10" fill="#333">No</text>
+
+  <!-- Admin to bottom processes -->
+  <line x1="280" y1="780" x2="280" y2="830" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="440" y1="780" x2="440" y2="830" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="600" y1="780" x2="600" y2="830" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="760" y1="780" x2="760" y2="830" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- ARROWS - Rescue Driver Flow -->
+  <line x1="1100" y1="120" x2="1100" y2="150" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="1100" y1="200" x2="1100" y2="230" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="1160" y1="270" x2="1220" y2="270" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="1180" y="265" font-size="10" fill="#333">Yes</text>
+  <line x1="1340" y1="270" x2="1380" y2="270" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="1500" y1="270" x2="1540" y2="270" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Driver login fail loop -->
+  <path d="M 1040,270 L 1020,270 L 1020,175 L 1040,175" stroke="#333" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <text x="1010" y="230" font-size="10" fill="#333">No</text>
+
+  <!-- ARROWS - Veterinarian Flow -->
+  <line x1="1100" y1="450" x2="1100" y2="480" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="1100" y1="530" x2="1100" y2="560" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="1160" y1="600" x2="1220" y2="600" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="1180" y="595" font-size="10" fill="#333">Yes</text>
+  <line x1="1340" y1="600" x2="1380" y2="600" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="1500" y1="600" x2="1540" y2="600" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Vet login fail loop -->
+  <path d="M 1040,600 L 1020,600 L 1020,505 L 1040,505" stroke="#333" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <text x="1010" y="560" font-size="10" fill="#333">No</text>
+
+  <!-- Connection from driver to admin assignment -->
+  <line x1="500" y1="670" x2="500" y2="330" stroke="#333" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrowhead)"/>
+  <line x1="500" y1="330" x2="1220" y2="270" stroke="#333" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrowhead)"/>
+
+  <!-- Connection from driver transport to vet assessment -->
+  <line x1="1600" y1="295" x2="1600" y2="510" stroke="#333" stroke-width="2" stroke-dasharray="5,5"/>
+  <line x1="1600" y1="510" x2="1280" y2="575" stroke="#333" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrowhead)"/>
+
+  <!-- Connection from vet to adoption flow -->
+  <line x1="1540" y1="600" x2="1400" y2="600" stroke="#333" stroke-width="2" stroke-dasharray="5,5"/>
+  <line x1="1400" y1="600" x2="1400" y2="380" stroke="#333" stroke-width="2" stroke-dasharray="5,5"/>
+  <line x1="1400" y1="380" x2="600" y2="330" stroke="#333" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrowhead)"/>
+
+  <!-- Connection from admin register dog to vet -->
+  <line x1="660" y1="670" x2="900" y2="670" stroke="#333" stroke-width="2" stroke-dasharray="5,5"/>
+  <line x1="900" y1="670" x2="900" y2="600" stroke="#333" stroke-width="2" stroke-dasharray="5,5"/>
+  <line x1="900" y1="600" x2="1040" y2="600" stroke="#333" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrowhead)"/>
+
+  <!-- Connections to notifications -->
+  <line x1="820" y1="270" x2="860" y2="270" stroke="#333" stroke-width="2" stroke-dasharray="5,5"/>
+  <line x1="860" y1="270" x2="860" y2="410" stroke="#333" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrowhead)"/>
+
+  <!-- Connection from notifications to system updates -->
+  <line x1="930" y1="470" x2="930" y2="500" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Connections from bottom processes to End -->
+  <line x1="280" y1="880" x2="280" y2="930" stroke="#333" stroke-width="2"/>
+  <line x1="280" y1="930" x2="400" y2="980" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <line x1="440" y1="880" x2="440" y2="930" stroke="#333" stroke-width="2"/>
+  <line x1="440" y1="930" x2="460" y2="940" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <line x1="600" y1="880" x2="600" y2="930" stroke="#333" stroke-width="2"/>
+  <line x1="600" y1="930" x2="520" y2="980" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <line x1="760" y1="880" x2="760" y2="930" stroke="#333" stroke-width="2"/>
+  <line x1="760" y1="930" x2="520" y2="980" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Connection from Generate Reports to End -->
+  <line x1="760" y1="780" x2="760" y2="910" stroke="#333" stroke-width="2"/>
+  <line x1="760" y1="910" x2="520" y2="980" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Connection from report stray dog to admin verify -->
+  <line x1="440" y1="295" x2="440" y2="630" stroke="#333" stroke-width="2" stroke-dasharray="5,5"/>
+  <line x1="440" y1="630" x2="280" y2="645" stroke="#333" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrowhead)"/>
+
+  <!-- Connection from adoption certificate to end flow -->
+  <line x1="920" y1="295" x2="920" y2="330" stroke="#333" stroke-width="2"/>
+  <line x1="920" y1="330" x2="930" y2="410" stroke="#333" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrowhead)"/>
+
+  <!-- Connection from volunteer registration to volunteer management -->
+  <line x1="600" y1="380" x2="600" y2="730" stroke="#333" stroke-width="2" stroke-dasharray="5,5"/>
+  <line x1="600" y1="730" x2="340" y2="830" stroke="#333" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrowhead)"/>
+
+  <!-- Connection from donations to donation management -->
+  <line x1="440" y1="380" x2="440" y2="830" stroke="#333" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrowhead)"/>
+
+  <!-- Connection from organize events to event registration -->
+  <line x1="500" y1="755" x2="700" y2="855" stroke="#333" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrowhead)"/>
+
+  <!-- Connection from update medical records to medical records management -->
+  <line x1="1600" y1="625" x2="1600" y2="855" stroke="#333" stroke-width="2" stroke-dasharray="5,5"/>
+  <line x1="1600" y1="855" x2="660" y2="855" stroke="#333" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrowhead)"/>
+
+  <!-- Legend -->
+  <rect x="20" y="1050" width="800" height="140" fill="white" stroke="#333" stroke-width="2" rx="5"/>
+  <text x="420" y="1075" text-anchor="middle" font-size="14" font-weight="bold">Legend</text>
+  
+  <rect x="40" y="1095" width="80" height="30" rx="3" fill="#74b9ff" stroke="#333" stroke-width="1"/>
+  <text x="130" y="1113" font-size="11">Public User Actions</text>
+
+  <rect x="250" y="1095" width="80" height="30" rx="3" fill="#ffb3ba" stroke="#333" stroke-width="1"/>
+  <text x="340" y="1113" font-size="11">Admin Actions</text>
+
+  <rect x="460" y="1095" width="80" height="30" rx="3" fill="#ffdfba" stroke="#333" stroke-width="1"/>
+  <text x="550" y="1113" font-size="11">Rescue Driver Actions</text>
+
+  <rect x="670" y="1095" width="80" height="30" rx="3" fill="#bae1ff" stroke="#333" stroke-width="1"/>
+  <text x="760" y="1113" font-size="11">Veterinarian Actions</text>
+
+  <rect x="40" y="1140" width="80" height="30" rx="3" fill="#a29bfe" stroke="#333" stroke-width="1"/>
+  <text x="130" y="1158" font-size="11">Adoption Process</text>
+
+  <rect x="250" y="1140" width="80" height="30" rx="3" fill="#a8e6cf" stroke="#333" stroke-width="1"/>
+  <text x="340" y="1158" font-size="11">System Management</text>
+
+  <rect x="460" y="1140" width="80" height="30" rx="3" fill="#dfe6e9" stroke="#333" stroke-width="1"/>
+  <text x="550" y="1158" font-size="11">Automated Processes</text>
+
+  <polygon points="680,1145 720,1155 680,1165 640,1155" fill="#ffd93d" stroke="#333" stroke-width="1"/>
+  <text x="730" y="1158" font-size="11">Decision Points</text>
+
+  <!-- Workflow notes -->
+  <rect x="1050" y="730" width="650" height="300" fill="#fff9e6" stroke="#333" stroke-width="2" rx="5"/>
+  <text x="1375" y="760" text-anchor="middle" font-size="16" font-weight="bold" fill="#2c3e50">Workflow Summary</text>
+  
+  <text x="1070" y="790" font-size="11" fill="#333">1. Users register and login based on their role (Public, Admin, Driver, Vet)</text>
+  <text x="1070" y="810" font-size="11" fill="#333">2. Public users report stray dogs, browse adoptable dogs, donate, and volunteer</text>
+  <text x="1070" y="830" font-size="11" fill="#333">3. Admins verify reports, assign rescue drivers, register dogs, and approve adoptions</text>
+  <text x="1070" y="850" font-size="11" fill="#333">4. Rescue drivers receive assignments and transport dogs to shelter</text>
+  <text x="1070" y="870" font-size="11" fill="#333">5. Veterinarians assess health, administer treatment, and update records</text>
+  <text x="1070" y="890" font-size="11" fill="#333">6. Healthy dogs are marked as available for adoption</text>
+  <text x="1070" y="910" font-size="11" fill="#333">7. Public users submit adoption requests and receive certificates</text>
+  <text x="1070" y="930" font-size="11" fill="#333">8. System sends automated notifications for all key events</text>
+  <text x="1070" y="950" font-size="11" fill="#333">9. Admins organize events, manage volunteers, and monitor activities</text>
+  <text x="1070" y="970" font-size="11" fill="#333">10. System generates reports and maintains all records</text>
+  <text x="1070" y="990" font-size="11" fill="#333">11. Process ends when all workflows are completed and data is secured</text>
+  
+  <text x="1375" y="1015" text-anchor="middle" font-size="10" font-style="italic" fill="#666">Dashed lines indicate data flow between different user roles</text>
+
+  <!-- Footer -->
+  <text x="900" y="1380" text-anchor="middle" font-size="12" fill="#7f8c8d">StreetToSweet Dog Shelter Management System © 2025</text>
+</svg>

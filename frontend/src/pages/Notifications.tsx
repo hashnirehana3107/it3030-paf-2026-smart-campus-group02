@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Check, Folder, MessageSquare, X, Bell } from 'lucide-react';
 import { formatDistanceToNow, parseISO } from 'date-fns';
 import api from '../services/api';
@@ -15,6 +16,7 @@ interface Notification {
 }
 
 export default function Notifications() {
+    const navigate = useNavigate();
     const [notifications, setNotifications] = useState<Notification[]>([]);
     const [unreadCount, setUnreadCount] = useState(0);
 
@@ -121,7 +123,14 @@ export default function Notifications() {
                     notifications.map((n) => (
                         <div 
                             key={n.id}
-                            onClick={() => !n.read && markAsRead(n.id)}
+                            onClick={() => {
+                                if (!n.read) markAsRead(n.id);
+                                if (n.type?.startsWith('BOOKING')) {
+                                    navigate('/bookings');
+                                } else if (n.type?.startsWith('TICKET')) {
+                                    navigate('/tickets');
+                                }
+                            }}
                             className={`flex items-start p-5 border-b border-[#262832]/80 transition-colors cursor-pointer group 
                                 ${!n.read ? 'bg-[#12141a]/40 hover:bg-[#262832]/30' : 'hover:bg-[#262832]/10'}
                             `}

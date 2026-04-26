@@ -881,7 +881,7 @@ export default function Bookings() {
                                     </div>
                                 ) : (
                                     <div className="flex gap-3">
-                                        {(selectedBooking.status === 'PENDING' || (role === 'ADMIN' && selectedBooking.status === 'APPROVED')) && (
+                                        {(selectedBooking.status === 'PENDING' || selectedBooking.status === 'APPROVED') && (
                                             <button 
                                                 disabled={actionLoading === selectedBooking.id}
                                                 onClick={() => handleCancelClick(selectedBooking.id)}

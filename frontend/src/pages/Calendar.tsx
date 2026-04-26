@@ -92,7 +92,7 @@ export default function Calendar() {
                             <button onClick={() => setCurrentDate(new Date(currentDate.getFullYear(), currentDate.getMonth() - 1, 1))} className="w-10 h-10 rounded-xl border border-[#262832] bg-[#12141a] flex items-center justify-center text-slate-400 hover:text-white hover:bg-[#262832] transition-all">
                                 <ChevronLeft className="w-5 h-5" />
                             </button>
-                            <button onClick={() => setCurrentDate(new Date())} className="px-4 py-2 text-[10px] font-black uppercase tracking-widest bg-[#12141a] border border-[#262832] rounded-xl hover:text-white transition-colors">Today</button>
+                            <button onClick={() => { const now = new Date(); setCurrentDate(now); setSelectedDate(now); }} className="px-4 py-2 text-[10px] font-black uppercase tracking-widest bg-[#12141a] border border-[#262832] rounded-xl hover:text-white transition-colors">Today</button>
                             <button onClick={() => setCurrentDate(new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 1))} className="w-10 h-10 rounded-xl border border-[#262832] bg-[#12141a] flex items-center justify-center text-slate-400 hover:text-white hover:bg-[#262832] transition-all">
                                 <ChevronRight className="w-5 h-5" />
                             </button>
@@ -121,14 +121,15 @@ export default function Calendar() {
                                             ${isSelected 
                                                 ? 'bg-blue-600 text-white shadow-[0_10px_25px_rgba(37,99,235,0.4)] scale-105 z-10' 
                                                 : isToday
-                                                ? 'bg-blue-600/10 text-blue-400 border border-blue-500/30'
+                                                ? 'bg-blue-600/20 text-blue-400 border-2 border-blue-500/50'
                                                 : 'text-slate-500 hover:text-slate-200 hover:bg-white/5'
                                             }`}
                                     >
+                                        {isToday && !isSelected && <span className="absolute -top-2 bg-blue-500 text-white text-[8px] px-1.5 py-0.5 rounded-sm font-bold uppercase tracking-widest">Today</span>}
                                         <span className={`text-lg font-black ${isSelected ? 'text-white' : ''}`}>{day}</span>
                                         {hasEvents && (
                                             <div className="flex gap-1 mt-1">
-                                                <span className={`w-1.5 h-1.5 rounded-full ${isSelected ? 'bg-white shadow-[0_0_8px_white]' : 'bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.6)]'}`}></span>
+                                                <span className={`w-1.5 h-1.5 rounded-full ${isSelected ? 'bg-white shadow-[0_0_8px_white]' : 'bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.6)]'}`}></span>
                                             </div>
                                         )}
                                     </button>
